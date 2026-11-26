@@ -12,3 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     if: contains(github.event.pull_request.labels.*.name, 'stage')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo "Stage label detected - starting build"
